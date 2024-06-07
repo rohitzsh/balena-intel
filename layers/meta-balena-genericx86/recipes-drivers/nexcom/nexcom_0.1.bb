@@ -19,7 +19,7 @@ do_compile() {
 
 do_install() {
    install -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/nexcom-io
-   install -m 0644 ${S}/c*${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/nexcom-io
+   install -m 0644 ${S}/*${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/nexcom-io
 }
 
 RPROVIDES_${PN} += "kernel-module-nexcom-io"
