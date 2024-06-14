@@ -129,11 +129,10 @@ CONNECTIVITY_FIRMWARES:remove = " \
 "
 
 CONNECTIVITY_MODULES =+ " \
-	rtl8812au \
 	rtl8812bu \
 "
 
-CONNECTIVITY_MODULES:remove:surface-go = "rtl8812au rtl8812bu"
+CONNECTIVITY_MODULES:remove:surface-go = "rtl8812bu"
 
 # we need to clean-up rootfs space so let's remove some unused firmware
 CONNECTIVITY_FIRMWARES:remove = "linux-firmware-wl18xx"
