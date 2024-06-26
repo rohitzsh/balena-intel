@@ -419,6 +419,13 @@ BALENA_CONFIGS[igc] = " \
     CONFIG_IGC=m \
 "
 
+# Intel GMAC support
+BALENA_CONFIGS:append:genericx86-64 = " dwmac_intel"
+BALENA_CONFIGS[dwmac] = " \
+    CONFIG_DWMAC_INTEL=y \
+    CONFIG_STMMAC_ETH=y \
+"
+
 # We get these patches from https://github.com/libcamera-org/linux/tree/surface/v5.8.18-yocto
 SRC_URI:append:surface-go = " \
     file://0001-ARM-LPAE-Invalidate-the-TLB-for-module-addresses-dur.patch \
