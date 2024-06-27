@@ -421,7 +421,7 @@ BALENA_CONFIGS[igc] = " \
 
 # Intel GMAC support
 BALENA_CONFIGS:append:genericx86-64 = " dwmac_intel"
-BALENA_CONFIGS[dwmac] = " \
+BALENA_CONFIGS[dwmac_intel] = " \
     CONFIG_DWMAC_INTEL=y \
     CONFIG_STMMAC_ETH=y \
 "
