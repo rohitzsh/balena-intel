@@ -113,6 +113,10 @@ do_install:append() {
     install -m 0644 ${S}/amdgpu/* ${D}${nonarch_base_libdir}/firmware/amdgpu/
 }
 
+FILES:${PN}-amdgpu = " \
+  ${nonarch_base_libdir}/firmware/amdgpu/* \
+"
+
 IWLWIFI_FW_TOCLEAN += " \
     1000 \
     3160 \
