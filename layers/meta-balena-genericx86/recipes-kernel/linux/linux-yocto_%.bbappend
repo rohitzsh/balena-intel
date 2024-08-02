@@ -563,3 +563,12 @@ BALENA_CONFIGS[i2c-dev] = " \
     CONFIG_I2C=y \
     CONFIG_I2C_CHARDEV=m \
     "
+
+BALENA_CONFIGS:append = " amdgpu"
+BALENA_CONFIGS[amdgpu] = " \
+    CONFIG_DRM_RADEON=m \
+    CONFIG_DRM_AMDGPU=m \
+    CONFIG_DRM_AMDGPU_SI=y  \
+    CONFIG_DRM_AMDGPU_CIK=y \
+    CONFIG_DRM_AMDGPU_USERPTR=y \
+"
