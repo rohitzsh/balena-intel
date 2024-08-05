@@ -109,13 +109,7 @@ do_install:append() {
     install -m 0644 ${WORKDIR}/kbl_guc_69.0.3.bin ${D}${nonarch_base_libdir}/firmware/i915/kbl_guc_69.0.3.bin
     install -m 0644 ${WORKDIR}/kbl_guc_70.1.1.bin ${D}${nonarch_base_libdir}/firmware/i915/kbl_guc_70.1.1.bin
 
-    install -d ${D}${nonarch_base_libdir}/firmware/amdgpu
-    install -m 0644 ${S}/amdgpu/* ${D}${nonarch_base_libdir}/firmware/amdgpu/
 }
-
-FILES:${PN}-amdgpu = " \
-  ${nonarch_base_libdir}/firmware/amdgpu/* \
-"
 
 IWLWIFI_FW_TOCLEAN += " \
     1000 \
