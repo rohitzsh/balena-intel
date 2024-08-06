@@ -44,7 +44,20 @@ PACKAGES =+ " \
     ${PN}-iwlwifi-so-a0 \
     ${PN}-ipu3-firmware \
     ${PN}-kbl-guc \
+    ${PN}-amdgpu \
 "
+
+# For amdgpu
+LICENSE:${PN}-amdgpu = "Firmware-amdgpu"
+LICENSE:${PN}-amdgpu-license = "Firmware-amdgpu"
+
+FILES:${PN}-amdgpu-license = "${nonarch_base_libdir}/firmware/LICENSE.amdgpu"
+FILES:${PN}-amdgpu = " \
+  ${nonarch_base_libdir}/firmware/amdgpu \
+"
+
+RDEPENDS:${PN}-amdgpu += "${PN}-amdgpu-license"
+
 FILES:${PN}-ibt-20-1-3  = " \
     ${nonarch_base_libdir}/firmware/intel/ibt-20-1-3.ddc* \
     ${nonarch_base_libdir}/firmware/intel/ibt-20-1-3.sfi* \
@@ -108,7 +121,6 @@ do_install:append() {
     install -m 0644 ${WORKDIR}/kbl_guc_62.0.0.bin ${D}${nonarch_base_libdir}/firmware/i915/kbl_guc_62.0.0.bin
     install -m 0644 ${WORKDIR}/kbl_guc_69.0.3.bin ${D}${nonarch_base_libdir}/firmware/i915/kbl_guc_69.0.3.bin
     install -m 0644 ${WORKDIR}/kbl_guc_70.1.1.bin ${D}${nonarch_base_libdir}/firmware/i915/kbl_guc_70.1.1.bin
-
 }
 
 IWLWIFI_FW_TOCLEAN += " \
